@@ -13,9 +13,7 @@ export default function Map() {
   const classes = useStyles();
   return (
     <Box className={classes.mapContainer}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: 'AIzaSyDYO8u1F3c-LvV29ARxJqDy_6VjPSU24k4' }}
-      />
+      <GoogleMapReact bootstrapURLKeys={{ key: '' }} />
     </Box>
   );
 }
