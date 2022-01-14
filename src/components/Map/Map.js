@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, Box } from '@material-ui/core';
-import GoogleMapReact from 'google-map-react';
+import Map from "mapmyindia-react";
+// import GoogleMapReact from 'google-map-react';
 
 const useStyles = makeStyles((theme) => ({
   mapContainer: {
@@ -9,11 +10,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Map() {
+export default function MapApi() {
   const classes = useStyles();
   return (
     <Box className={classes.mapContainer}>
-      <GoogleMapReact bootstrapURLKeys={{ key: '' }} />
+      <Map
+        markers={[
+          {
+            position: [18.5314, 73.845],
+            draggable: true,
+            title: "Marker title",
+            onClick: e => {
+              console.log("clicked ");
+            },
+            onDragend: e => {
+              console.log("dragged");
+            }
+          }
+        ]}
+      />
     </Box>
   );
 }
